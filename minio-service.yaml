@@ -1,0 +1,14 @@
+﻿kind: Service
+apiVersion: v1
+metadata:
+  name: minio-s3-service
+  namespace: mwc-vod
+spec:
+  ports:
+    - protocol: TCP
+      port: 9000
+      targetPort: 9000
+  selector:
+    app: minio-s3
+  type: ClusterIP
+  sessionAffinity: None

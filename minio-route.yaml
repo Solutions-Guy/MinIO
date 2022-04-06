@@ -1,0 +1,14 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: minio-s3
+  namespace: mwc-vod
+spec:
+  host: minio-s3-mwc-vod.apps.compact2.openshift.smc
+  to:
+    kind: Service
+    name: minio-s3-service
+    weight: 100
+  port:
+    targetPort: 9000
+  wildcardPolicy: None
